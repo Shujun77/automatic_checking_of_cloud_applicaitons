@@ -1,0 +1,10 @@
+version: '3'
+services:
+  autotest:
+    container_name: autotest
+    network_mode: host
+    volumes:
+      - ./workspace:/workspace
+      - ./workspace/studentCode/message_queue/data/logs.txt:/usr/src/app/data/logs.txt:rw
+
+    command: apt-get update && apt-get install python3-pip && pip3 install docker && python3 AutoTest.py

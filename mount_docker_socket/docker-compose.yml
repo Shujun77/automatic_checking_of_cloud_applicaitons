@@ -1,0 +1,17 @@
+version: '3'
+services:
+  autotest:
+    container_name: autotest
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    # Linux needed requirement
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"
+    network_mode: host
+    volumes:
+      - /Users/shujunliu/Desktop/thesis/workspace:/Users/shujunliu/Desktop/thesis/workspace 
+      - /var/run/docker.sock:/var/run/docker.sock
+
+    command: python3 AutoTest.py
+    

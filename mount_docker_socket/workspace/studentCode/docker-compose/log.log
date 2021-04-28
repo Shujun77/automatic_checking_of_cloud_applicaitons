@@ -1,0 +1,4 @@
+CONTAINER ID   IMAGE             COMMAND                  CREATED          STATUS          PORTS                    NAMES
+ef6696ee41fe   node:12           "docker-entrypoint.s…"   15 seconds ago   Up 11 seconds   0.0.0.0:8001->8894/tcp   service1
+c093e41df99d   node:12           "docker-entrypoint.s…"   15 seconds ago   Up 10 seconds   0.0.0.0:8893->8893/tcp   service2
+de730af25544   thesis_autotest   "python AutoTest.py"     20 seconds ago   Up 19 seconds                            autotest

@@ -1,0 +1,4 @@
+CONTAINER ID   IMAGE           COMMAND                  CREATED          STATUS                  PORTS                    NAMES
+3ec8e6d2aaf3   node:12         "docker-entrypoint.s…"   7 seconds ago    Up Less than a second   0.0.0.0:8893->8893/tcp   service2
+7ea424ef977d   node:12         "docker-entrypoint.s…"   7 seconds ago    Up 1 second             0.0.0.0:8001->8894/tcp   service1
+468f58c6a5bd   dind_autotest   "dockerd-entrypoint.…"   12 seconds ago   Up 11 seconds                                    dindtest

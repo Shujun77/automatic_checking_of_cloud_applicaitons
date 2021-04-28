@@ -1,0 +1,35 @@
+version: '3'
+services:
+  pinger:
+    image: node:12
+    command: node ./data/service2.js
+    container_name: service2
+    ports:
+      - 8893:8893
+    networks:
+      pingnet:
+        ipv4_address: 172.18.0.3
+    volumes:
+      - ./data:/data
+    environment:
+      ServiceName: service_2    
+  pingrelay:
+    build: .
+    image: node:12
+    ports: 
+      - 8001:8894
+    command: node ./data/service1.js
+    container_name: service1
+    networks:
+      pingnet:
+        ipv4_address: 172.18.0.2
+    volumes:
+      - ./data:/data
+    environment:
+      ServiceName: service_1
+
+networks:
+  pingnet:
+    ipam:
+      config:
+      - subnet: 172.18.0.0/16
